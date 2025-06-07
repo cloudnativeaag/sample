@@ -1,0 +1,35 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "registry.opentofu.org/hashicorp/azurerm"
+      version = "=3.0.0"
+    }
+  }
+}
+
+provider "azurerm" {
+  features {}
+  subscription_id = var.subscription_id
+}
+
+resource "azurerm_resource_group" "rg" {
+  name     = var.resource_group_name
+  location = var.resource_group_location
+}
+
+
+#############################variables.tf#########################################
+variable "subscription_id" {
+  description = "Azure Subscription ID"
+  type        = string
+}
+
+variable "resource_group_name" {
+  description = "Name of the resource group"
+  type        = string
+}
+
+variable "resource_group_location" {
+  description = "Location for the resource group"
+  type        = string
+}
