@@ -51,4 +51,13 @@ variable "resource_group_name" {
 }
 
 
-******************************
+******************************terraform.tfvars***************************
+
+# Get your subscription ID with: az account show --query id --output tsv
+# Get your tenant ID with: az account show --query tenantId --output tsv
+subscription_id = "subscription id"
+tenant_id       = "tenantid (website/guid number)"
+#environment     = "us east"
+# Optional: override other variables
+resource_group_name = "rg-name"
+location = "us east"
